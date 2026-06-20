@@ -1,0 +1,46 @@
+11. Afinidade conceitual
+Reorganize os métodos da classe abaixo agrupando responsabilidades semelhantes.
+
+public class UsuarioUtils {
+    public void enviarEmail(String email) {
+        System.out.println("Enviando e-mail para " + email);
+    }
+
+    public String formatarCPF(String cpf) {
+        return cpf.replace(".", "").replace("-", "");
+    }
+
+    public void enviarNotificacao(String mensagem) {
+        System.out.println(mensagem);
+    }
+
+    public String formatarNome(String nome) {
+        return nome.trim().toUpperCase();
+    }
+}
+Explique qual critério foi usado para reorganizar a classe.
+
+---------------------------------
+
+public class UsuarioUtils {
+
+	
+    public String formatarNome(String nome) {
+        return nome.trim().toUpperCase();
+    }
+
+    public String formatarCPF(String cpf) {
+        return cpf.replace(".", "").replace("-", "");
+    }
+
+    public void enviarEmail(String email) {
+        System.out.println("Enviando e-mail para " + email);
+    }
+
+    public void enviarNotificacao(String mensagem) {
+        System.out.println(mensagem);
+    }
+}
+
+R) Separei os metodos conforme sua principal funcao, primeiro os metodos que retornam um resultado que mexem com a atribuiçao de variaveis
+e depois os metodos que apenas retornam uma mensagem com alguma informaçao para o usuario.

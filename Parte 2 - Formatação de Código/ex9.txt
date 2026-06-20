@@ -1,0 +1,21 @@
+9. Formatação horizontal
+Reescreva o código abaixo para reduzir linhas longas.
+
+public void gerarRelatorio(String cliente, String email, double total, boolean premium, boolean pagamentoEmDia) {
+    if (premium && pagamentoEmDia && total > 1000) {
+        System.out.println("Relatório especial para " + cliente + " enviado para " + email + " com total de " + total);
+    }
+}
+---------------------------------
+
+public void gerarRelatorio(String cliente, 
+						   String email, 
+						   double total, 
+						   boolean premium, 
+						   boolean pagamentoEmDia) {
+						   
+    if (premium && pagamentoEmDia && total > 1000) {
+        System.out.println("Relatório especial para " + cliente + " enviado para " 
+						   + email + " com total de " + total);
+    }
+}

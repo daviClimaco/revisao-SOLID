@@ -1,0 +1,41 @@
+7. Formatação vertical
+Reorganize a classe abaixo para que a leitura siga do método mais geral para os métodos auxiliares.
+
+public class PedidoService {
+    private void imprimirResumo(String cliente, double total) {
+        System.out.println(cliente + ": " + total);
+    }
+
+    private double calcularTotal(double subtotal, double frete) {
+        return subtotal + frete;
+    }
+
+    public void fecharPedido(String cliente, double subtotal, double frete) {
+        double total = calcularTotal(subtotal, frete);
+        imprimirResumo(cliente, total);
+    }
+}
+Ao final, explique o que foi melhorado.
+
+
+------------------------------------------------------------------
+
+public class PedidoService {
+
+	public void fecharPedido(String cliente, double subtotal, double frete) {
+        double total = calcularTotal(subtotal, frete);
+        imprimirResumo(cliente, total);
+    }
+	
+	private double calcularTotal(double subtotal, double frete) {
+        return subtotal + frete;
+    }
+	
+    private void imprimirResumo(String cliente, double total) {
+        System.out.println(cliente + ": " + total);
+    }
+}
+
+Foi melhorado a Ordenaçao dos metodos seguindo o metodo de leitura top-down, onde se vai lendo de cima para baixo,
+quando se for ler esses metodos da classe futuramente, chegará na chamada do metodo calcularTotal, e ele já estará logo abaixo,
+e depois no imprimirResumo, mesma coisa, também já estará logo abaixo.
