@@ -1,0 +1,50 @@
+16. Condicionais aninhadas
+a )Reescreva a função abaixo usando retornos antecipados.
+
+public boolean podeAcessarSistema(Usuario usuario) {
+    if (usuario != null) {
+        if (usuario.isAtivo()) {
+            if (!usuario.isBloqueado()) {
+                if (usuario.temPermissao("SISTEMA")) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false;
+}
+
+b) Depois, crie uma segunda versão usando funções auxiliares com nomes descritivos.
+
+------------------------------------------------------------------------------------
+
+a ) public boolean podeAcessarSistema(Usuario usuario) {
+
+    if (usuario == null) {
+        return false;
+    }
+
+    if (!usuario.isAtivo()) {
+        return false;
+    }
+
+    if (usuario.isBloqueado()) {
+        return false;
+    }
+
+    if (!usuario.temPermissao("SISTEMA")) {
+        return false;
+    }
+
+    return true;
+}
+
+b)public boolean podeAcessarSistema(Usuario usuario) {
+
+    return validaUsuarioNaoNulo(usuario)
+        && validaUsuarioAtivo(usuario)
+        && validaUsuarioNaoBloqueado(usuario)
+        && validaPermissaoUsuario(usuario);
+	
+}

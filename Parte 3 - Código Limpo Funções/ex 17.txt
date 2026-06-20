@@ -1,0 +1,35 @@
+17. Argumento booleano
+Analise o método:
+
+public void processarPedido(Pedido pedido, boolean enviarEmail) {
+    pedidoRepository.salvar(pedido);
+
+    if (enviarEmail) {
+        emailService.enviarConfirmacao(pedido);
+    }
+}
+Responda:
+
+a) O argumento enviarEmail deixa a função mais clara ou mais confusa?
+b) Que comportamento diferente ele controla?
+c) Proponha uma alternativa sem argumento booleano.
+
+--------------------------------------------------------------
+
+a) Em um contexto geral pode deixar a insrucao mais confusa para a maioria dos analistas,
+é possivel compreender, mas para a manutençao do software em um geral, esse parametro logico se vai enviar email ou nao,
+nao é a melhor forma de tratar isso.
+
+b) Ele controla um parametro se voce quer ou nao enviar email, 
+caos seja verdadeiro ele vai adentrar no if, e fazer a requisiçao do envio de email.
+
+c) O ideal seria ter dois metodos separados, um que apenas procewssa o pedido, e outro que também envia email.
+
+public void processarPedido(Pedido pedido) {
+    pedidoRepository.salvar(pedido);
+}
+
+public void processarPedidoEEnviarEmail(Pedido pedido) {
+    processarPedido(pedido);
+    emailService.enviarConfirmacao(pedido);
+}

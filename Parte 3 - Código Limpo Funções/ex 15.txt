@@ -1,0 +1,38 @@
+15. Efeito colateral escondido
+Analise a função:
+
+public boolean usuarioExiste(String email) {
+    Usuario usuario = usuarioRepository.buscarPorEmail(email);
+
+    if (usuario == null) {
+        usuarioRepository.salvar(new Usuario(email));
+        return false;
+    }
+
+    return true;
+}
+Responda:
+
+a) O que o nome da função sugere que ela faz?
+b) O que ela faz além disso?
+c) Por que isso é um efeito colateral?
+d) Reescreva separando verificação e criação do usuário.
+
+-------------------------------------------------------------
+
+a) o Nome da funcao sugere que ela valida se o registro de usuario existe no banco de dados.
+
+b) Alem de validar se o registro existe no banco, caso nao eixste, ela cria o registro e acabaria sempre retornando que "o usuario existe".
+
+c) Isso é um efeito colateral pois a funcao indica apenas uma verificação, e a funcao nao esta realizando apenas isso,
+pois sempre que nao existir o usuario, ela vai tentar crira o registro do usuario no banco.
+Isso acaba provocando uma alteraçao no sistema, e é um "efeito colateral", pois quem chama pode pensar que está apenas fazendo uma verificação,
+sem saber que na verdade está criando registros.
+
+d)public boolean usuarioExiste(String email) {
+    return usuarioRepository.buscarPorEmail(email) != null;
+}
+
+public void criarUsuario(String email) {
+    usuarioRepository.salvar(new Usuario(email));
+}
