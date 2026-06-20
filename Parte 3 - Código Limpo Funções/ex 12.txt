@@ -1,0 +1,65 @@
+12. Função com muitas responsabilidades
+Analise a função abaixo:
+
+public void finalizarPedido(Cliente cliente, Carrinho carrinho) {
+    double total = 0;
+
+    for (Item item : carrinho.getItens()) {
+        total += item.getPreco() * item.getQuantidade();
+    }
+
+    Pedido pedido = new Pedido(cliente, carrinho.getItens(), total);
+    pedidoRepository.salvar(pedido);
+
+    emailService.enviar(cliente.getEmail(), "Pedido confirmado");
+}
+Faça o que se pede:
+
+a) Identifique as responsabilidades da função.
+b) Explique por que isso prejudica a manutenção.
+c) Reescreva dividindo a lógica em funções menores.
+
+------------------------------------------------------------------
+
+a) A funcao tem as responsabilidades
+	1 - calcular valor total do pedido
+	2 - salvar pedido no banco de dados
+	3 - enviar email ao cliente
+	
+b) Isso prejudica a manutençao pois a funcao tem varios metodos que nao precisavam e nem deveriam ser delas
+está tudo encapsulado nela, e com varias responsabilidades, violando o Single Responsability Principle.
+
+c)  public void finalizarPedido(Cliente cliente, Carrinho carrinho) {
+		
+		calcularValorTotal();
+		
+		salvarPedido();
+		
+		enviarEmail();
+
+	}
+
+	public double calcularValorTotal(Carrinho carrinho) {
+		
+		double total = 0;
+
+		for (Item item : carrinho.getItens()) {
+			total += item.getPreco() * item.getQuantidade();
+		}
+		
+		return total;
+
+	}
+
+	public void salvarPedido(Cliente cliente, Carrinho carrinho, double total){
+
+		Pedido pedido = new Pedido(cliente, carrinho.getItens(), total);
+		pedidoRepository.salvar(pedido);
+
+	}
+
+	public void enviarEmail(Cliente cliente){
+
+		emailService.enviar(cliente.getEmail(), "Pedido confirmado");
+
+	}
