@@ -1,0 +1,23 @@
+13. Nome pouco descritivo
+Analise o método:
+
+public boolean verificar(Usuario usuario) {
+    return usuario.getIdade() >= 18 && usuario.isAtivo();
+}
+Faça o que se pede:
+
+a) Explique o problema do nome verificar.
+b) Proponha um nome mais descritivo.
+c) Reescreva o método com o novo nome.
+
+----------------------------------------------------
+
+a) O problema do nome é a falta de clareza na descriçao, pode se verificar n coisas, nao se sabe o que está verificando
+
+b) public boolean verificarIdadeUsuario(Usuario usuario)
+
+c)
+
+public boolean verificarIdadeUsuario(Usuario usuario) {
+	return usuario.getIdade() >= 18 && usuario.isAtivo();
+}

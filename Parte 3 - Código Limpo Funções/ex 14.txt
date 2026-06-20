@@ -1,0 +1,93 @@
+14. Função com muitos argumentos
+Analise a função:
+
+public void cadastrarAluno(
+    String nome,
+    String cpf,
+    String email,
+    String telefone,
+    String curso,
+    int periodo
+) {
+    Aluno aluno = new Aluno();
+    aluno.setNome(nome);
+    aluno.setCpf(cpf);
+    aluno.setEmail(email);
+    aluno.setTelefone(telefone);
+    aluno.setCurso(curso);
+    aluno.setPeriodo(periodo);
+
+    alunoRepository.salvar(aluno);
+}
+Faça o que se pede:
+
+a) Explique por que muitos argumentos dificultam o uso da função.
+b) Crie uma classe ou objeto para agrupar os dados de cadastro.
+c) Reescreva a função recebendo esse objeto como parâmetro.
+
+--------------------------------------------------------------------
+
+a) muitos argumentos dificultam o uso da funçao pois pioram muito a legibilidade, e dao  mais chance de ocorrer erro pois possuem muitos
+	parametros para serme passados, dando margem para passagem incorreta e futuros erros.
+	
+b)public class Aluno {
+
+    private String nome;
+    private String cpf;
+    private String email;
+    private String telefone;
+    private String curso;
+    private int periodo;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public int getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(int periodo) {
+        this.periodo = periodo;
+    }
+}
+
+c)public void cadastrarAluno(Aluno aluno) {
+    alunoRepository.salvar(aluno);
+}
