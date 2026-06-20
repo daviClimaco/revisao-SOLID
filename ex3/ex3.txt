@@ -1,0 +1,23 @@
+3. Melhorando nomes de parâmetros
+Analise o método abaixo:
+
+public void copiar(String a, String b) {
+    System.out.println("Copiando de " + a + " para " + b);
+}
+Faça o que se pede:
+
+a) Identifique o problema de legibilidade.
+b) Renomeie os parâmetros.
+c) Explique por que a nova versão ficou mais clara.
+
+
+a) O problema de legibilidade se dá ao nome das variaveis que sao passadas como parametro,
+a e b nao sao nomes legiveis pois sao completamente genericos e nao se sabe muito bem o que significa e em um sistema muito grande
+ficaraá de dificil legibilidade devido a quantidade de variaveis genericas
+
+b) public void copiar(String origem, String destino) {
+		System.out.println("Copiando de " + origem + " para " + destino);
+   }
+   
+c) A nova versao ficou mais clara pois agora se tem entendimento claro, 
+de que as Strings sao uma a String origem que sera, copiada poara a String destino.

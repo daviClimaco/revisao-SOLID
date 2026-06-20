@@ -1,0 +1,15 @@
+int x;
+int dias;
+int diasDesdeUltimoLogin;
+double v;
+double valorTotalPedido;
+
+
+os nomes mais legiesis sao as variaveis, diasDesdeUltimoLogin e valorTotalPedido, pois descrevem exatamente o que significa o valor que
+elas alocariam
+
+os nomes vagos sao x, dias, e v. pois nao dá para entender precisamente do que se trata os conteudos alocados nela, a variavel dias, até
+parece ser valida, porem ainda sim, nao se sabe do que se tratam esses dias sem contexto.
+
+um bom nome deve comunicar sua descriçao, o que será alocado nela e seu tipo de valor que irá alocar sem precisar buscar na declaraçao,
+como por exemplo, uma pratica boa seria colocar no inicio da variavel o tipo dela, como dValorVigenteFrete (double). 

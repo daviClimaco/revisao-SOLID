@@ -1,0 +1,4 @@
+Codigo limpo é uma pratica que deveria ser utilziada em todas as formas de se criar e engenhariar software, em todos seus processos e partes
+Codigo limp ajuda na legibilidade do codigo, facilitando manutencoes e entendimentos futuros, pois sempre precisaremos re-visitar o codigo, pois o software é mutavel
+assim facilitando na reduçao de erros pois os mesmos ficarao cada vez mais faceis de se encontrar e resolver
+ajudando na escalabilidade do software e sua evoluçao futura, facilitando para todos as partes interessadas sairem ganhando.
