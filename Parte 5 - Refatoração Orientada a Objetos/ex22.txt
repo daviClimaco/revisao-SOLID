@@ -1,0 +1,15 @@
+22. Move Method
+Analise o cenário:
+
+A classe PedidoService possui o método abaixo:
+
+public double calcularTotalPedido(Pedido pedido) {
+    return pedido.getSubtotal() + pedido.getFrete() - pedido.getDesconto();
+}
+O método usa apenas dados da classe Pedido.
+
+Faça o que se pede:
+
+a) Explique por que esse método pode estar na classe errada.
+b) Mova o método para a classe Pedido.
+c) Ajuste a chamada em PedidoService.
