@@ -1,0 +1,29 @@
+21. Inline Temp
+Refatore o código usando Inline Temp, se considerar adequado.
+
+public void verificarEstoque(int quantidade) {
+    boolean estoqueBaixo = quantidade < 10;
+
+    if (estoqueBaixo) {
+        System.out.println("Estoque baixo");
+    } else {
+        System.out.println("Estoque suficiente");
+    }
+}
+Explique se a variável temporária ajudava ou atrapalhava a leitura.
+
+-------------------------------------------------------------------------
+
+public void verificarEstoque(int quantidade) {
+
+    if (quantidade < 10) {
+        System.out.println("Estoque baixo");
+    } else {
+        System.out.println("Estoque suficiente");
+    }
+}
+
+A variável temporária estoqueBaixo não traz um ganho significativo de legibilidade, 
+pois a expressão quantidade < 10 é simples e autoexplicativa. 
+Como a variável é utilizada apenas uma vez, ela pode ser removida através de Inline Temp, 
+deixando o código mais direto e reduzindo elementos desnecessários.

@@ -1,0 +1,24 @@
+19. Extract Variable
+Refatore o código abaixo usando Extract Variable.
+
+public void verificarAprovacao(double notaFinal, int frequencia, boolean fezRecuperacao) {
+    if ((notaFinal >= 6.0 && frequencia >= 75) || (fezRecuperacao && notaFinal >= 5.0 && frequencia >= 80)) {
+        System.out.println("Aluno aprovado");
+    } else {
+        System.out.println("Aluno reprovado");
+    }
+}
+Crie variáveis com nomes que expliquem cada condição importante.
+
+---------------------------------------------------------------------------------
+
+public void verificarAprovacao(double notaFinal, int frequencia, boolean fezRecuperacao) {
+	boolean alunoAprovado 			 = notaFinal >= 6.0 && frequencia >= 75;
+	boolean alunoAprovadoRecuperacao = fezRecuperacao && notaFinal >= 5.0 && frequencia >= 80;
+
+     if (alunoAprovado || alunoAprovadoRecuperacao) {
+        System.out.println("Aluno aprovado");
+    } else {
+        System.out.println("Aluno reprovado");
+    }
+}

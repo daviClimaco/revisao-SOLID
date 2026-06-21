@@ -1,0 +1,35 @@
+20. Inline Method
+Analise o código:
+
+public void confirmarPedido(double total) {
+    if (atingiuValorMinimo(total)) {
+        System.out.println("Pedido confirmado");
+    } else {
+        System.out.println("Valor mínimo não atingido");
+    }
+}
+
+private boolean atingiuValorMinimo(double total) {
+    return total >= 50;
+}
+Faça o que se pede:
+
+a) Avalie se o método auxiliar realmente melhora a leitura.
+b) Aplique Inline Method, caso considere adequado.
+c) Justifique sua decisão.
+
+------------------------------------------------------------------
+
+a) Nesse caso, o método atingiuValorMinimo() não melhora significativamente a legibilidade, pois contém apenas uma comparação simples (total >= 50). 
+A leitura do código continua clara mesmo sem o método auxiliar. 
+Porém, se essa regra fosse utilizada em vários lugares do sistema, manter o método poderia ser vantajoso para centralizar a lógica e facilitar futuras alterações.
+
+b ) public void confirmarPedido(double total) {
+    if (total >= 50) {
+        System.out.println("Pedido confirmado");
+    } else {
+        System.out.println("Valor mínimo não atingido");
+    }
+}
+
+c) Da para utilizar pois esse metodo encapsula uma validaçao simples, entao isso acaba reduzindo a complexibilidade legivel do codigo.

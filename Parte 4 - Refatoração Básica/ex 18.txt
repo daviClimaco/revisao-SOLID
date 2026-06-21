@@ -1,0 +1,51 @@
+18. Extract Method
+Refatore o método abaixo usando Extract Method.
+
+public void emitirRecibo(String cliente, int quantidade, double precoUnitario) {
+    double subtotal = quantidade * precoUnitario;
+    double imposto = subtotal * 0.10;
+    double total = subtotal + imposto;
+
+    System.out.println("Cliente: " + cliente);
+    System.out.println("Quantidade: " + quantidade);
+    System.out.println("Subtotal: " + subtotal);
+    System.out.println("Imposto: " + imposto);
+    System.out.println("Total: " + total);
+
+    if (total > 500) {
+        System.out.println("Compra de alto valor");
+    }
+}
+Extraia métodos para:
+
+calcular subtotal;
+calcular imposto;
+imprimir recibo;
+verificar compra de alto valor.
+
+-------------------------------------------------------
+
+public double calcularSubtotal(int quantidade, double precoUnitario) {
+	double subtotal = quantidade * precoUnitario;
+	return subtotal;
+}
+
+public double calcularImposto(double subtotal){
+	double imposto = subtotal * 0.10;
+	return imposto;
+}
+
+public void imprimirRecibo(String cliente, int quantidade, double subtotal, double imposto){
+    double total = subtotal + imposto;
+	System.out.println("Cliente: " + cliente);
+    System.out.println("Quantidade: " + quantidade);
+    System.out.println("Subtotal: " + subtotal);
+    System.out.println("Imposto: " + imposto);
+    System.out.println("Total: " + total);
+}
+
+public void verificarCompraAltoValor(double total){
+	if (total  500) {
+        System.out.println("Compra de alto valor");
+    }
+}
