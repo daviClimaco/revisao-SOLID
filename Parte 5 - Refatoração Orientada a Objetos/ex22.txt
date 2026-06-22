@@ -13,3 +13,7 @@ Faça o que se pede:
 a) Explique por que esse método pode estar na classe errada.
 b) Mova o método para a classe Pedido.
 c) Ajuste a chamada em PedidoService.
+
+------------------------------------------------------------------------
+
+a) 
